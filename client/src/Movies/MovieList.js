@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const MovieList = props => {
   const [movies, setMovies] = useState([])
@@ -28,6 +29,8 @@ const MovieList = props => {
 }
 
 function MovieDetails({ movie }) {
+  const param = useParams();
+  console.log(param)
   const { title, director, metascore, stars } = movie;
   return (
     <div className="movie-card">
